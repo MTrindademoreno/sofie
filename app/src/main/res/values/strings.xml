@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Sofie</string>
+    <string name="add_task">add_task</string>
+    <string name="new_task">new task</string>
+    <string name="task_text_rv">Tarefas</string>
+    <string name="label">email</string>
+    <string name="label_mail">email</string>
+    <string name="label_name">Nome da tarefa</string>
+    <string name="taskDescription">Descrição da tarefa</string>
+    <string name="img_rectangle_splash">imagem retangulo splash</string>
+    <string name="icon_check">icone check</string>
+    <string name="add">add</string>
+</resources>

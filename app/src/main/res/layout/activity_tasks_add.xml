@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_fa"
+    tools:context=".TasksAddActivity">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+
+        android:id="@+id/topAppBar"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/top_app_bar"
+        app:navigationIcon="@drawable/ic_baseline_close_24"
+        app:title="Nova tarefa" />
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/tilEmailTask"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/label_mail"
+        app:boxStrokeColor="@color/black_12"
+        app:hintTextColor="#8c8c8c"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textColor="#8C8C8C"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_fa"
+            android:maxLines="1"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilNameTask"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/label_name"
+        app:boxStrokeColor="@color/black_12"
+        app:hintTextColor="#8c8c8c"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/tilEmailTask">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_fa"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDescriptionTask"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/lblDescriptionTask">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTilNameTask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_til_description" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+
+        android:id="@+id/lblDescriptionTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:labelFor="@id/tilDescriptionTask"
+        android:paddingBottom="2dp"
+        android:text="@string/taskDescription"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/tilDescriptionTask"
+        app:layout_constraintStart_toStartOf="@id/tilDescriptionTask"
+        app:layout_constraintTop_toBottomOf="@id/tilNameTask" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
