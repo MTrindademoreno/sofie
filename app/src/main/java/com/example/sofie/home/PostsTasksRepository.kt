@@ -1,6 +1,5 @@
 package com.example.sofie.home
 
-import android.util.Log
 import com.example.sofie.api.ResponseApi
 import com.example.sofie.api.TaskApiService
 import com.example.sofie.model.Data

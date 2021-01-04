@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 class TaskGetViewModel:ViewModel() {
     private var business = TaskBusiness()
     val task:MutableLiveData<TaskItem> = MutableLiveData()
-    val erro:MutableLiveData<String> = MutableLiveData()
+    private val erro:MutableLiveData<String> = MutableLiveData()
 
     fun getTask(){
         viewModelScope.launch {

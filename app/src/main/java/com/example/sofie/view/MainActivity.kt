@@ -1,15 +1,13 @@
 package com.example.sofie.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sofie.adapter.MainAdpter
 import com.example.sofie.databinding.ActivityMainBinding
 import com.example.sofie.model.Data
-import com.example.sofie.model.TaskItem
 import com.example.sofie.viewModel.TaskGetViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -55,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadContent() {
         viewModel.getTask()
-        viewModel.task.observe(this, Observer {
+        viewModel.task.observe(this, {
             tasklist.clear()
             tasklist.addAll(it.data)
             mainAdpter.notifyDataSetChanged()

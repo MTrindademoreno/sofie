@@ -7,16 +7,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sofie.R
 import com.example.sofie.model.Data
-import com.example.sofie.model.TaskItem
 
 class MainAdpter(private val list: List<Data>):RecyclerView.Adapter<MainAdpter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdpter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate( R.layout.task_item,parent,false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: MainAdpter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(list[position])
     }
 

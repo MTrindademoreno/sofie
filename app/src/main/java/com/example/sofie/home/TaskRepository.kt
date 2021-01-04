@@ -2,9 +2,6 @@ package com.example.sofie.home
 
 import com.example.sofie.api.ResponseApi
 import com.example.sofie.api.TaskApiService
-import com.example.sofie.api.TaskApiService.taskApi
-import com.example.sofie.model.Data
-import retrofit2.Retrofit
 
 
 class TaskRepository {

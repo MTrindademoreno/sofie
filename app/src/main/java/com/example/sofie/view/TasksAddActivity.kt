@@ -53,7 +53,6 @@ class TasksAddActivity : AppCompatActivity() {
                 R.id.taskSave -> {
 
                     if (verifyInput()) {
-                        Toast.makeText(this, "save", Toast.LENGTH_LONG).show()
                         postTask()
 
 
@@ -77,7 +76,15 @@ class TasksAddActivity : AppCompatActivity() {
         val title = binding.edtNameTask.editableText.toString()
         val description = binding.edtDescriptionTask.editableText.toString()
         viewModel.postTasks(Data(description, email, title))
+        clearInput()
+        Toast.makeText(this, "Salvo", Toast.LENGTH_SHORT).show()
 
+    }
+
+    private fun clearInput() {
+        binding.edtMailTask.text?.clear()
+        binding.edtDescriptionTask.text?.clear()
+        binding.edtNameTask.text?.clear()
     }
 
 
