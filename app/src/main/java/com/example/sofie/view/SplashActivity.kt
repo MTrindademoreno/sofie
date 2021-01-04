@@ -1,8 +1,9 @@
-package com.example.sofie
+package com.example.sofie.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.sofie.R
 import java.util.*
 import kotlin.concurrent.schedule
 

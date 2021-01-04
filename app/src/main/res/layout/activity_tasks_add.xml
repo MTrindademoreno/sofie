@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white_fa"
-    tools:context=".TasksAddActivity">
+    tools:context=".view.TasksAddActivity">
 
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -35,6 +35,7 @@
         app:layout_constraintTop_toBottomOf="@id/topAppBar">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtMailTask"
             android:textColor="#8C8C8C"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,6 +62,7 @@
         app:layout_constraintTop_toBottomOf="@id/tilEmailTask">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtNameTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white_fa"
@@ -73,18 +75,19 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
+
         android:id="@+id/tilDescriptionTask"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="85dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintTop_toBottomOf="@id/lblDescriptionTask">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtTilNameTask"
+            android:id="@+id/edtDescriptionTask"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="85dp"
             android:background="@drawable/bg_til_description" />
 
     </com.google.android.material.textfield.TextInputLayout>
