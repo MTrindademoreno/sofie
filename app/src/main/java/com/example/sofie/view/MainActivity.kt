@@ -1,4 +1,4 @@
-package com.example.sofie
+package com.example.sofie.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,11 +8,17 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sofie.adapter.MainAdpter
 import com.example.sofie.databinding.ActivityMainBinding
+import com.example.sofie.model.Data
+import com.example.sofie.model.TaskItem
 import com.example.sofie.viewModel.TaskGetViewModel
 
 class MainActivity : AppCompatActivity() {
+    private val tasklist = mutableListOf<Data>()
+    private val mainAdpter: MainAdpter by lazy {
+        MainAdpter(tasklist)
+    }
+
     private lateinit var viewModel: TaskGetViewModel
-    private lateinit var adapter: MainAdpter
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,22 +26,42 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-
+        viewModel = ViewModelProvider(this).get(TaskGetViewModel::class.java)
 
         binding.fabAddTask.setOnClickListener {
             val intent = Intent(this, TasksAddActivity::class.java)
             startActivity(intent)
         }
-        viewModel = ViewModelProvider(this).get(TaskGetViewModel::class.java)
+
+        setupRecyclerView()
+
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadContent()
+
+
+    }
+
+    private fun setupRecyclerView() {
+        binding.rvTasks.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = mainAdpter
+        }
+    }
+
+    private fun loadContent() {
         viewModel.getTask()
         viewModel.task.observe(this, Observer {
-            binding.rvTasks.apply {
-                layoutManager = LinearLayoutManager(this@MainActivity)
-                adapter = MainAdpter(it)
-            }
+            tasklist.clear()
+            tasklist.addAll(it.data)
+            mainAdpter.notifyDataSetChanged()
+
 
         })
-
 
     }
 }

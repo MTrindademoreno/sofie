@@ -10,4 +10,10 @@
     <string name="img_rectangle_splash">imagem retangulo splash</string>
     <string name="icon_check">icone check</string>
     <string name="add">add</string>
+    <string name="field_required">%1$s é de preenchimento obrigatório</string>
+    <string name="email">Email</string>
+    <string name="msg_invalid_email">Email inválido</string>
+    <string name="title">Nome da tarefa</string>
+    <string name="descrition">Descrição da tarefa</string>
+
 </resources>

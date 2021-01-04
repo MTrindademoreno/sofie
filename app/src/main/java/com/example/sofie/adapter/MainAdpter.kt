@@ -9,7 +9,7 @@ import com.example.sofie.R
 import com.example.sofie.model.Data
 import com.example.sofie.model.TaskItem
 
-class MainAdpter(private val list: TaskItem):RecyclerView.Adapter<MainAdpter.ViewHolder>() {
+class MainAdpter(private val list: List<Data>):RecyclerView.Adapter<MainAdpter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdpter.ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate( R.layout.task_item,parent,false)
@@ -17,11 +17,11 @@ class MainAdpter(private val list: TaskItem):RecyclerView.Adapter<MainAdpter.Vie
     }
 
     override fun onBindViewHolder(holder: MainAdpter.ViewHolder, position: Int) {
-        holder.bind(list.data[position])
+        holder.bind(list[position])
     }
 
     override fun getItemCount(): Int {
-        return list.data.size
+        return list.size
     }
 
     class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
